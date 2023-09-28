@@ -1,0 +1,5 @@
+- Chacon, S. and Ben Straub. Pro Git. Apress.
+- Loeliger, J. and McCullough, M. Version control with Git. O' Reilly
+- Hudson, R. Ry's Gil Tutorial. Smashwords(2014) 
+
+
