@@ -7,5 +7,6 @@ class Cell:
         self.image_tk = self._load_image(image_path)
 
     def _load_image(self, image_path):
-        image = Image.open(image_path)
-        return ImageTk.PhotoImage(image)
+        img = Image.open(image_path)
+        imagen_redimensionada = img.resize((200, 100), Image.Resampling.LANCZOS)
+        return ImageTk.PhotoImage(imagen_redimensionada)
