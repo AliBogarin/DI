@@ -1,0 +1,29 @@
+[
+{
+    "name":"Morpho Peleides",
+    "description": "La mariposa Morpho Azul (Morpho peleides) es una de las mariposas más grandes del mundo, con una envergadura de hasta 8 pulgadas de largo. Estas mariposas se encuentran en América Central y del Sur, y son las mariposas más comunes del género Morpho en América Central.",
+    "image_url": "https://raw.githubusercontent.com/AliBogarin/DWES/main/edited/mariposa1.jpg"
+},
+{
+    "name":"Appias",
+    "description":"Appias albina, el albatros común, es una pequeña mariposa de la familia Pieridae. Se encuentra en el sur y sureste de Asia a Australia",
+    "image_url":"https://raw.githubusercontent.com/AliBogarin/DWES/main/edited/mariposa2.jpg"
+},
+
+{
+    "name":"Polymmatus icarus",
+    "description":"La mariposa ícaro se encuentra ampliamente distribuida por toda Europa, incluidas las islas mediterráneas, Asia templada y norte de África. En Macaronesia sólo aparece en las Islas Canarias.",
+    "image_url":"https://raw.githubusercontent.com/AliBogarin/DWES/main/edited/mariposa3.jpg"
+},
+{
+    "name":"Heliconius",
+    "description":"Esta mariposa diurna es bastante conocida en todo el mundo, ya que fue declarada mariposa oficial del Estado de Florida en el año 1996. Podemos verla desde el nivel del mar hasta los 1.800 metros de altitud.",
+    "image_url":"https://raw.githubusercontent.com/AliBogarin/DWES/main/edited/mariposa4.jpg"
+},
+{
+    "name":"Hypolimnas bolina",
+    "description":"Hypolimnas bolina , la gran mosca del huevo, la mosca común o en Nueva Zelanda la mariposa luna azul es una especie de mariposa ninfalida que se encuentra desde Madagascar hasta Asia y Australia.",
+    "image_url": "https://raw.githubusercontent.com/AliBogarin/DWES/main/edited/mariposa5.jpg"
+}
+
+]
