@@ -4,6 +4,7 @@ from PIL import Image, ImageTk
 
 
 class DetailWindow:
+    
     def _init_(self, root, title, image, description):
 
         self.root = root
