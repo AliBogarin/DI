@@ -1,8 +1,10 @@
+from logging import root
 from tkinter import ttk
 import tkinter as tk
-from tkinter import messagebox
+
 from cell import Cell
 from detail_window import DetailWindow
+
 
 
 class MainWindow():
@@ -25,11 +27,17 @@ class MainWindow():
         for i, cell in enumerate(self.cells): #Recorro cada cell en la lista
             label = ttk.Label(root, image=cell.image_tk, text=cell.title, compound=tk.BOTTOM)
             label.grid(row=i, column=0)
-            label.bind("<Button-1>", lambda event, cell=cell: self._make_on_button_clicked(cell))
+            label.bind("<Button-1>", lambda event, cell=cell: self.on_button_clicked(cell))
 
-    def _make_on_button_clicked(self, cell):
-        return lambda : self.on_button_clicked(cell)
 
-    def on_button_clicked(self, cell):
-        message = "Mi Mariposuario " + cell.json_data
-        messagebox.showinfo("Información", message)
+        width = int(180)
+        height = int(400)
+    
+        root.geometry(str(width)+"x"+str(height))
+    
+        x=(root.winfo_screenwidth() - width)/2
+        y=(root.winfo_screenheight() -height)/2
+        root.geometry(f"+{int(x)}+{int(y)}")
+
+   # def _make_on_button_clicked(self, cell):
+   #     return lambda : self.on_button_clicked(cell)

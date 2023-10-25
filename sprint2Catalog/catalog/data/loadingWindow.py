@@ -4,7 +4,7 @@ import requests
 import tkinter as tk
 from tkinter import ttk
 from window import MainWindow
-import json
+
 
 class LoadingWindow():
     def __init__(self, root):
@@ -13,6 +13,12 @@ class LoadingWindow():
         self.json_data = []
         self.root.title("Cargando...")
         self.root.geometry("170x170") # Define el alto y el ancho
+
+        #Ajusto la ventana en medio de la pantalla
+        x=(self.root.winfo_screenwidth() - self.root.winfo_reqwidth())/2
+        y=(self.root.winfo_screenheight() - self.root.winfo_reqheight())/2
+        self.root.geometry(f"+{int(x)}+{int(y)}")
+
         self.root.resizable(False,False) # Indica si la ventana puede ser redimensionada o no
 
         self.label = tk.Label(self.root, text="Cargando datos...", font=("Arial", 14)) # Definimos tipo de fuente y tamaño
