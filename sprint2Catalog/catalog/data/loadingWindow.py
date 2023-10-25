@@ -38,14 +38,14 @@ class LoadingWindow():
         
     def draw_progress_circle(self, progress):
         self.canvas.delete("progress")
-        angle = int(360*(progress / 100))
+        angle = int(360*(progress/100))
 
         # Dibuja la porción de progreso en verde
         self.canvas.create_arc (10, 10, 50, 50, start=0, extent=angle, tags="progress", outline='green', width=4, style=tk.ARC)
         
     def update_progress_circle(self):
         if self.progress < 100:
-            self.progress += 11 #Aquí completamos el circulo
+            self.progress += 12 #Aquí completamos el circulo
         else:
             self.progress = 0
 
@@ -58,14 +58,14 @@ class LoadingWindow():
             self.json_data = response.json() # Llama a la función para lanzar la ventana principal
             self.finished = True
 
-
+    #Verifica cada 100 milisegundos si ha terminado alguna tarea, destruye la ventana actual y abre otra nueva.
     def check_thread(self):
         if self.finished:
             self.root.destroy()
             self.launch_main_window(self.json_data)
         else:
             self.root.after(100, self.check_thread)
-
+    #Lanza la  ventana principal
     def launch_main_window(self, json_data):
         root = tk.Tk()
         MainWindow(root,json_data)

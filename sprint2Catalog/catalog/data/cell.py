@@ -15,4 +15,7 @@ class Cell:
         img_data = Image.open(BytesIO(response.content))
         self.image_tk = ImageTk.PhotoImage(img_data)
         
-        
+    def load_image_from_url(self, url):
+        response = requests.get(url)
+        img = Image.open(BytesIO(response.content))
+        return img
