@@ -1,10 +1,16 @@
+
 import threading
+import requests
 import tkinter as tk
 from tkinter import ttk
+from window import MainWindow
+import json
 
 class LoadingWindow():
     def __init__(self, root):
         self.root = root
+        self.finished = False
+        self.json_data = []
         self.root.title("Cargando...")
         self.root.geometry("170x170") # Define el alto y el ancho
         self.root.resizable(False,False) # Indica si la ventana puede ser redimensionada o no
@@ -23,7 +29,11 @@ class LoadingWindow():
         
         self.update_progress_circle()
 
-        
+        self.thread = threading.Thread(target=self.fetch_json_data)
+        self.thread.start()
+
+        if self.thread.is_alive():
+            self.check_thread()
 
         
     def draw_progress_circle(self, progress):
@@ -31,15 +41,32 @@ class LoadingWindow():
         angle = int(360*(progress / 100))
 
         # Dibuja la porción de progreso en verde
-        self.canvas.create_arc (10, 10, 50, 50,
-                                start=0, extent=angle, tags="progress", outline='green', width=4, style=tk.ARC)
+        self.canvas.create_arc (10, 10, 50, 50, start=0, extent=angle, tags="progress", outline='green', width=4, style=tk.ARC)
         
     def update_progress_circle(self):
         if self.progress < 100:
-            self.progress += 1 #Aquí completamos el circulo
+            self.progress += 11 #Aquí completamos el circulo
         else:
             self.progress = 0
 
         self.draw_progress_circle(self.progress)
         self.root.after(50,self.update_progress_circle) # Llama a la función update_progress_circle cada 50 milisegundos
 
+    def fetch_json_data(self):
+        response = requests.get("https://raw.githubusercontent.com/AliBogarin/DWES/main/recursos/catalog.json")
+        if response.status_code == 200:
+            self.json_data = response.json() # Llama a la función para lanzar la ventana principal
+            self.finished = True
+
+
+    def check_thread(self):
+        if self.finished:
+            self.root.destroy()
+            self.launch_main_window(self.json_data)
+        else:
+            self.root.after(100, self.check_thread)
+
+    def launch_main_window(self, json_data):
+        root = tk.Tk()
+        MainWindow(root,json_data)
+        root.mainloop()

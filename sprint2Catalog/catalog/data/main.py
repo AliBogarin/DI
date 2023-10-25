@@ -3,6 +3,6 @@ from tkinter import Tk
 from loadingWindow import LoadingWindow
 
 if __name__ == "__main__":
-    root = Tk()
+    root =Tk()
     app = LoadingWindow(root)
     root.mainloop()

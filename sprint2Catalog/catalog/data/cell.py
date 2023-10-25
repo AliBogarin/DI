@@ -1,21 +1,18 @@
-from PIL import Image, ImageTk
-from detail_window import DetailWindow
-from tkinter import messagebox
-from tkinter import ttk
 import tkinter as tk
+import requests
+from io import BytesIO
+from PIL import Image, ImageTk
 
 class Cell:
-    def __init__(self, title, image_path, description):
+    def __init__(self, title, description, url):
+        ## Constructor.
         self.title = title
-        self.image_path = image_path
-        self.description = description  # Añadido nuevo atributo de descripción
-        self.image_tk = self._load_image(image_path)
-        
+        self.descrition = description
+        self.url = url
 
-    def _load_image(self, image_path):
-        img = Image.open(image_path)
-        imagen_redimensionada = img.resize((100, 100), Image.Resampling.LANCZOS)
-        return ImageTk.PhotoImage(imagen_redimensionada)
-    
-    def on_button_clicked(self):
-        DetailWindow(self.title, self.image_path, self.description)  # Modificado para usar el atributo de descripción
+        ## Convertimos la url a imagen importando requests y BytesIO.
+        response = requests.get(self.url)
+        img_data = Image.open(BytesIO(response.content))
+        self.image_tk = ImageTk.PhotoImage(img_data)
+        
+        
