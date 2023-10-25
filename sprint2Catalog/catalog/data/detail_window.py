@@ -1,7 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk
-from io import BytesIO
 from cell import Cell
 from tkinter import messagebox
 

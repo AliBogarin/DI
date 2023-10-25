@@ -19,3 +19,5 @@ class Cell:
         response = requests.get(url)
         img = Image.open(BytesIO(response.content))
         return img
+    #git add sprint2Catalog para subir cambios, hacerlos desde DWES
+    

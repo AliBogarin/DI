@@ -1,7 +1,7 @@
 from logging import root
 from tkinter import ttk
 import tkinter as tk
-
+from tkinter import messagebox
 from cell import Cell
 from detail_window import DetailWindow
 
@@ -11,6 +11,11 @@ class MainWindow():
 
     def on_button_clicked(self, cell):
         DetailWindow(cell)
+
+    def acerca_de(self):
+        messagebox.showinfo("Acerca del desarrollador", "Este programa fue desarrollado por Alicia.")
+
+        
 
     def __init__(self, root, json_data):
         root.title("Mi Mariposuario")
@@ -29,6 +34,13 @@ class MainWindow():
             label.grid(row=i, column=0)
             label.bind("<Button-1>", lambda event, cell=cell: self.on_button_clicked(cell))
 
+        
+        menubar = tk.Menu(root)
+        ayuda_menu = tk.Menu(menubar, tearoff=False)
+        ayuda_menu.add_command(label="Acerca de", command=self.acerca_de)
+        menubar.add_cascade(label="Ayuda", menu=ayuda_menu)
+
+        root.config(menu=menubar)
 
         width = int(180)
         height = int(400)
@@ -39,5 +51,5 @@ class MainWindow():
         y=(root.winfo_screenheight() -height)/2
         root.geometry(f"+{int(x)}+{int(y)}")
 
-   # def _make_on_button_clicked(self, cell):
-   #     return lambda : self.on_button_clicked(cell)
+        
+
