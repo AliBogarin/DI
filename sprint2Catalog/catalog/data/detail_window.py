@@ -11,10 +11,9 @@ class DetailWindow:
         message = "Mariposa: "+cell.title
         messagebox.showinfo("Información: "+message)
 
-    def _init_(self, cell): #Ventana principal
+    def __init__(self, cell): #Ventana principal
         #Defino las varialbles para guardar los argumentos
         root = tk.Toplevel()
-        root.title = ("Funciona???")
         label1 = ttk.Label(root, text=cell.title)
         label2 = ttk.Label(root, image=cell.image_tk)
         label3 = ttk.Label(root, text=cell.description, wraplength=160)
@@ -31,4 +30,3 @@ class DetailWindow:
         x=(root.winfo_screenwidth() - width)/2
         y=(root.winfo_screenheight() - heigth)/2
         root.geometry(f"+{int(x)}+{int(y)}")
-

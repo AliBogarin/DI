@@ -7,7 +7,7 @@ class Cell:
     def __init__(self, title, description, url):
         ## Constructor.
         self.title = title
-        self.descrition = description
+        self.description = description
         self.url = url
 
         ## Convertimos la url a imagen importando requests y BytesIO.
