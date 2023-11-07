@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/mariposa"/>
+    <item android:drawable="@drawable/circulo"/>
+    <!--Creo un layer-list para visualizar la imagen y el circulo
+    para que el usuario pueda ver la imagen redondeada, a continuación llamaré a img.xml, en imageView-->
+
+</layer-list>
