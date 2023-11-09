@@ -10,4 +10,4 @@
         android:color="@android:color/white" />
 </shape>
 
-<!--Este es el circulo que usaré para envolver la imagen en el layer-list, ambos están en dreawable-->
+    <!--Este es el circulo que usaré para envolver la imagen en el layer-list, ambos están en dreawable-->
