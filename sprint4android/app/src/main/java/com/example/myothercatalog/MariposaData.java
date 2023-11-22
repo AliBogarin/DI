@@ -1,5 +1,6 @@
 package com.example.myothercatalog;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 public class MariposaData {
@@ -7,7 +8,14 @@ public class MariposaData {
     private String description;
     private String image_url;
 
-    public MariposaData(JSONObject object) {
+    public MariposaData(JSONObject json) {
+        try {
+            this.name = json.getString("name");
+            this.description = json.getString("description");
+            this.image_url =json.getString("image_url");
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public String getName() {
@@ -39,4 +47,5 @@ public class MariposaData {
         this.description = description;
         this.image_url = image_url;
     }
+
 }
