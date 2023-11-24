@@ -7,7 +7,7 @@ public class MariposaData {
     private String name;
     private String description;
     private String image_url;
-
+//Creo mi clase mariposa para luego devolver los datos
     public MariposaData(JSONObject json) {
         try {
             this.name = json.getString("name");

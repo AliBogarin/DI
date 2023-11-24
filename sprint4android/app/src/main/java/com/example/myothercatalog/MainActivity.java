@@ -2,6 +2,7 @@ package com.example.myothercatalog;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private MariposaViewAdapter adapter;
 
+    private Button botonDetail;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,8 +45,12 @@ public class MainActivity extends AppCompatActivity {
         this.recyclerView = findViewById(R.id.recycler_view);
         this.adapter = new MariposaViewAdapter(new ArrayList<>(), this);
 
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
+
+
+
 
         String url = "https://raw.githubusercontent.com/AliBogarin/DWES/main/sprint1Tkinter/catalog/data/catalog.json";
 
@@ -80,5 +88,7 @@ public class MainActivity extends AppCompatActivity {
         );
 
         queue.add(request);
+
     }
+
 }
