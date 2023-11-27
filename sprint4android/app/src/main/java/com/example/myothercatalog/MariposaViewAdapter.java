@@ -39,7 +39,11 @@ public class MariposaViewAdapter extends RecyclerView.Adapter<MariposaViewHolder
             @Override
             public void onClick(View v) {
                 Intent intent  = new Intent(activity, DetailActivity.class);
+                intent.putExtra("name",positionData.getName());
+                intent.putExtra("description", positionData.getDescription());
+                intent.putExtra("image_url", positionData.getImage_url());
                 activity.startActivity(intent);
+
             }
         });
     }
