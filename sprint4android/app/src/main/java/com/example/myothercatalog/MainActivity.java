@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
                         adapter.setData(allMariposas);
                     }
                 },
+                //en caso de fallo
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
