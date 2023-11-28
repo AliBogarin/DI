@@ -9,6 +9,7 @@
 
     <TextView
         android:id="@+id/title_detail"
+        style="@style/CustonText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -34,6 +35,7 @@
 
     <TextView
         android:id="@+id/textView_description_detail"
+        style="@style/CustonText2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +45,8 @@
         android:layout_marginRight="10dp"
         android:text="descripción"
         android:textAlignment="center"
-        app:layout_constraintTop_toBottomOf="@id/view_image_detail" />
+        app:layout_constraintTop_toBottomOf="@id/view_image_detail"
+        android:theme="@style/CustonTheme"/>
 
 
 

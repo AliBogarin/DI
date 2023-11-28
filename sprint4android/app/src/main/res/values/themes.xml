@@ -3,6 +3,13 @@
     <style name="Base.Theme.MyOtherCatalog" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+    </style>
+    <!--Declaro aqui el fondo a aplicar-->
+    <style name="CustonTheme2" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#C8A2C8</item>
+        <item name="colorAccent">#00FF00</item>
+        <item name="android:windowBackground">#FFFF00</item> <!-- Fondo de la ventana -->
     </style>
 
     <style name="Theme.MyOtherCatalog" parent="Base.Theme.MyOtherCatalog" />

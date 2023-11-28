@@ -16,7 +16,7 @@ public class DetailActivity extends AppCompatActivity {
     private TextView name_v;
     private  TextView description_v;
     private ImageView image_v;
-    
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

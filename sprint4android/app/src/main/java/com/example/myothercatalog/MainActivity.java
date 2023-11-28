@@ -51,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
         String url = "https://raw.githubusercontent.com/AliBogarin/DWES/main/sprint1Tkinter/catalog/data/catalog.json";
 
         JsonArrayRequest request = new JsonArrayRequest(
